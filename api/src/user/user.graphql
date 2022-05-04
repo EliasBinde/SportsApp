@@ -1,0 +1,55 @@
+type User {
+  id: Int
+  username: String
+  email: String
+  phone: String
+  firstName: String
+  lastName: String
+  createdAt: DateTime
+}
+
+input CreateUserInput {
+  username: String!
+  email: String!
+  password: String!
+  phone: String
+  firstName: String!
+  lastName: String!
+}
+
+input UpdateUserInput {
+  password: String
+  email: String
+  phone: String
+  firstName: String
+  lastName: String
+}
+
+input LoginUserInput {
+  username: String!
+  password: String!
+}
+
+input ResetPasswordInput {
+  authorizationToken: String!
+  newPassword: String!
+}
+
+input ChangePasswordInput {
+  oldPassword: String!
+  newPassword: String!
+}
+
+input DeleteAccountInput {
+  password: String!
+}
+
+type Query {
+  user(username: String!): User
+  users(searchString: String!): [User]
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User
+  updateUser(updateUserInput: UpdateUserInput!): User
+}

@@ -1,0 +1,43 @@
+scalar DateTime
+
+type Room {
+  id: Int!
+  name: String!
+  description: String
+  tags: [String]
+  owner: String!
+  private: Boolean!
+  activeUsers: [Int]
+  activeWorkout: Int
+  activeExercise: Int
+  activeExerciseProgress: Int
+}
+
+input CreateRoomInput {
+  name: String!
+  description: String
+  tags: [String]
+  private: Boolean
+}
+
+type Query {
+  findRooms(searchString: String): [Room]
+}
+
+type Mutation {
+  createRoom(input: CreateRoomInput): Room
+  joinRoom(roomId: String!): Room
+  leaveRoom(roomId: String!): Room
+  queueWorkout(roomId: String!, workoutId: String!): Room
+  dequeueWorkout(roomId: String!): Room
+  startWorkout(roomId: String!): Room
+  setExerciseProgress(roomId: String!, progress: Int!): Room
+  nextExercise(roomId: String!): Room
+  prevExercise(roomId: String!): Room
+  endWorkout(roomId: String!): Room
+  deleteRoom(roomId: String!): Room
+}
+
+type Subscription {
+  room(roomId: String): Room
+}

@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator nestgraphql {
+  provider          = "node node_modules/prisma-nestjs-graphql"
+  output            = "../src/@generated/prisma-nestjs-graphql"
+  fields_Validator_from = "class-validator"
+  fields_Validator_input = "true"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                Int     @id @default(autoincrement())
+  username          String  @unique
+  email             String  @unique
+  password          String
+  phone             String
+  firstName         String
+  lastName          String
+  createdAt         DateTime
+  customWorkouts    CustomWorkout[]
+}
+
+
+model Room {
+  id Int @id @default(autoincrement())
+  name String
+  description String?
+  tags String[]
+  owner String
+  private Boolean @default(true)
+  invited String[]
+  mods String[]
+  activeWorkout Int?
+  activeUsers Int[]
+  activeExercise Int
+  activeExerciseProgress Int
+}
+
+
+model Workout {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  difficulty  Int
+  duration    Int
+  exerciseIds Int[]
+}
+model CustomWorkout {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  owner       User    @relation(fields: [ownerId], references: [id])
+  ownerId     Int
+  difficulty  Int
+  duration    Int
+  exerciseIds Int[]
+  public        Boolean @default(false)
+}
+
+model Exercise {
+  id            Int     @id @default(autoincrement())
+  name          String
+  description   String
+  targetMuscels String[]
+  videoLink     String
+  timePerRep    Int?
+  timeTotal     Int?
+  useTimeTotal  Boolean @default(false)
+  owner         Int
+}
