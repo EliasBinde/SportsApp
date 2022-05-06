@@ -22,4 +22,10 @@ export class RoomMaxAggregate {
 
     @Field(() => Int, {nullable:true})
     activeWorkout?: number;
+
+    @Field(() => Int, {nullable:true})
+    activeExercise?: number;
+
+    @Field(() => Int, {nullable:true})
+    activeExerciseProgress?: number;
 }

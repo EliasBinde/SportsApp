@@ -137,6 +137,22 @@ export class RoomService {
       },
       data: room,
     });
+    await this.prisma.room.update({
+      where: {
+        id: room.id,
+      },
+      data: room,
+    });
+    return room;
+  }
+  async setExerciseProgress(room: Room, progress: number) {
+    room.activeExerciseProgress = progress;
+    await this.prisma.room.update({
+      where: {
+        id: room.id,
+      },
+      data: room,
+    });
     return room;
   }
 }

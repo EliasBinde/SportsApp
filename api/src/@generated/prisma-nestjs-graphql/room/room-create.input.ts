@@ -35,4 +35,10 @@ export class RoomCreateInput {
 
     @Field(() => RoomCreateactiveUsersInput, {nullable:true})
     activeUsers?: RoomCreateactiveUsersInput;
+
+    @Field(() => Int, {nullable:true})
+    activeExercise?: number;
+
+    @Field(() => Int, {nullable:true})
+    activeExerciseProgress?: number;
 }

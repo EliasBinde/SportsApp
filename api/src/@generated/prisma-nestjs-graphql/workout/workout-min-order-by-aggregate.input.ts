@@ -15,8 +15,14 @@ export class WorkoutMinOrderByAggregateInput {
     description?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    ownerId?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     difficulty?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
     duration?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    public?: keyof typeof SortOrder;
 }

@@ -15,13 +15,25 @@ export class WorkoutCountAggregate {
     description!: number;
 
     @Field(() => Int, {nullable:false})
+    ownerId!: number;
+
+    @Field(() => Int, {nullable:false})
     difficulty!: number;
 
     @Field(() => Int, {nullable:false})
     duration!: number;
 
     @Field(() => Int, {nullable:false})
+    tags!: number;
+
+    @Field(() => Int, {nullable:false})
+    targetMuscels!: number;
+
+    @Field(() => Int, {nullable:false})
     exerciseIds!: number;
+
+    @Field(() => Int, {nullable:false})
+    public!: number;
 
     @Field(() => Int, {nullable:false})
     _all!: number;

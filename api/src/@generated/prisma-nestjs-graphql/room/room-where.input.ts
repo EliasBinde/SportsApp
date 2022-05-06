@@ -49,4 +49,10 @@ export class RoomWhereInput {
 
     @Field(() => IntNullableListFilter, {nullable:true})
     activeUsers?: IntNullableListFilter;
+
+    @Field(() => IntNullableFilter, {nullable:true})
+    activeExercise?: IntNullableFilter;
+
+    @Field(() => IntNullableFilter, {nullable:true})
+    activeExerciseProgress?: IntNullableFilter;
 }

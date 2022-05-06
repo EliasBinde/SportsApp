@@ -23,6 +23,12 @@ export class CustomWorkoutCountAggregateInput {
     duration?: true;
 
     @Field(() => Boolean, {nullable:true})
+    tags?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    targetMuscels?: true;
+
+    @Field(() => Boolean, {nullable:true})
     exerciseIds?: true;
 
     @Field(() => Boolean, {nullable:true})

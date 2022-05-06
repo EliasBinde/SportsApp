@@ -30,5 +30,8 @@ export class ExerciseCountAggregate {
     useTimeTotal!: number;
 
     @Field(() => Int, {nullable:false})
+    owner!: number;
+
+    @Field(() => Int, {nullable:false})
     _all!: number;
 }

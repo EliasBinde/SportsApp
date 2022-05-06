@@ -28,6 +28,12 @@ export class CustomWorkoutGroupBy {
     @Field(() => Int, {nullable:false})
     duration!: number;
 
+    @Field(() => [String], {nullable:true})
+    tags?: Array<string>;
+
+    @Field(() => [String], {nullable:true})
+    targetMuscels?: Array<string>;
+
     @Field(() => [Int], {nullable:true})
     exerciseIds?: Array<number>;
 

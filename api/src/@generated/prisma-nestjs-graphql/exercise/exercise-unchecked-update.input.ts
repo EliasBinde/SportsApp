@@ -32,4 +32,7 @@ export class ExerciseUncheckedUpdateInput {
 
     @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
     useTimeTotal?: BoolFieldUpdateOperationsInput;
+
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    owner?: IntFieldUpdateOperationsInput;
 }

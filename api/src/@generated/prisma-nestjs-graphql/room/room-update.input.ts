@@ -38,4 +38,10 @@ export class RoomUpdateInput {
 
     @Field(() => RoomUpdateactiveUsersInput, {nullable:true})
     activeUsers?: RoomUpdateactiveUsersInput;
+
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    activeExercise?: NullableIntFieldUpdateOperationsInput;
+
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    activeExerciseProgress?: NullableIntFieldUpdateOperationsInput;
 }

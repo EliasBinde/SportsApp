@@ -1,6 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { SortOrder } from '../prisma/sort-order.enum';
+import { UserOrderByWithRelationInput } from '../user/user-order-by-with-relation.input';
 
 @InputType()
 export class WorkoutOrderByWithRelationInput {
@@ -14,6 +15,12 @@ export class WorkoutOrderByWithRelationInput {
     @Field(() => SortOrder, {nullable:true})
     description?: keyof typeof SortOrder;
 
+    @Field(() => UserOrderByWithRelationInput, {nullable:true})
+    owner?: UserOrderByWithRelationInput;
+
+    @Field(() => SortOrder, {nullable:true})
+    ownerId?: keyof typeof SortOrder;
+
     @Field(() => SortOrder, {nullable:true})
     difficulty?: keyof typeof SortOrder;
 
@@ -21,5 +28,14 @@ export class WorkoutOrderByWithRelationInput {
     duration?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    tags?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    targetMuscels?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     exerciseIds?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    public?: keyof typeof SortOrder;
 }

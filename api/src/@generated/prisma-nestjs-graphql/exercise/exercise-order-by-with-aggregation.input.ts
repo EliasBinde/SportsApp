@@ -34,6 +34,9 @@ export class ExerciseOrderByWithAggregationInput {
     @Field(() => SortOrder, {nullable:true})
     useTimeTotal?: keyof typeof SortOrder;
 
+    @Field(() => SortOrder, {nullable:true})
+    owner?: keyof typeof SortOrder;
+
     @Field(() => ExerciseCountOrderByAggregateInput, {nullable:true})
     _count?: ExerciseCountOrderByAggregateInput;
 

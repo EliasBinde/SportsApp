@@ -42,4 +42,10 @@ export class RoomUncheckedUpdateManyInput {
 
     @Field(() => RoomUpdateactiveUsersInput, {nullable:true})
     activeUsers?: RoomUpdateactiveUsersInput;
+
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    activeExercise?: NullableIntFieldUpdateOperationsInput;
+
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    activeExerciseProgress?: NullableIntFieldUpdateOperationsInput;
 }

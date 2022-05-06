@@ -4,6 +4,7 @@ import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-
 import { ExerciseUpdatetargetMuscelsInput } from '../prisma/exercise-updatetarget-muscels.input';
 import { NullableIntFieldUpdateOperationsInput } from '../prisma/nullable-int-field-update-operations.input';
 import { BoolFieldUpdateOperationsInput } from '../prisma/bool-field-update-operations.input';
+import { IntFieldUpdateOperationsInput } from '../prisma/int-field-update-operations.input';
 
 @InputType()
 export class ExerciseUpdateInput {
@@ -28,4 +29,7 @@ export class ExerciseUpdateInput {
 
     @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
     useTimeTotal?: BoolFieldUpdateOperationsInput;
+
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    owner?: IntFieldUpdateOperationsInput;
 }

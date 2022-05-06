@@ -4,6 +4,8 @@ import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-
 import { NullableStringFieldUpdateOperationsInput } from '../prisma/nullable-string-field-update-operations.input';
 import { UserUpdateOneRequiredWithoutCustomWorkoutsInput } from '../user/user-update-one-required-without-custom-workouts.input';
 import { IntFieldUpdateOperationsInput } from '../prisma/int-field-update-operations.input';
+import { CustomWorkoutUpdatetagsInput } from '../prisma/custom-workout-updatetags.input';
+import { CustomWorkoutUpdatetargetMuscelsInput } from '../prisma/custom-workout-updatetarget-muscels.input';
 import { CustomWorkoutUpdateexerciseIdsInput } from '../prisma/custom-workout-updateexercise-ids.input';
 import { BoolFieldUpdateOperationsInput } from '../prisma/bool-field-update-operations.input';
 
@@ -24,6 +26,12 @@ export class CustomWorkoutUpdateInput {
 
     @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
     duration?: IntFieldUpdateOperationsInput;
+
+    @Field(() => CustomWorkoutUpdatetagsInput, {nullable:true})
+    tags?: CustomWorkoutUpdatetagsInput;
+
+    @Field(() => CustomWorkoutUpdatetargetMuscelsInput, {nullable:true})
+    targetMuscels?: CustomWorkoutUpdatetargetMuscelsInput;
 
     @Field(() => CustomWorkoutUpdateexerciseIdsInput, {nullable:true})
     exerciseIds?: CustomWorkoutUpdateexerciseIdsInput;

@@ -10,7 +10,9 @@ export enum RoomScalarFieldEnum {
     invited = "invited",
     mods = "mods",
     activeWorkout = "activeWorkout",
-    activeUsers = "activeUsers"
+    activeUsers = "activeUsers",
+    activeExercise = "activeExercise",
+    activeExerciseProgress = "activeExerciseProgress"
 }
 
 

@@ -59,6 +59,16 @@ export class DeleteAccountInput {
     password: string;
 }
 
+export class CreateWorkoutInput {
+    name?: Nullable<string>;
+    description?: Nullable<string>;
+    difficulty?: Nullable<number>;
+    duration?: Nullable<number>;
+    tags?: Nullable<Nullable<string>[]>;
+    targetMuscles?: Nullable<Nullable<string>[]>;
+    exerciseIds?: Nullable<Nullable<number>[]>;
+}
+
 export class LoginResponse {
     access_token: string;
     user: User;
@@ -94,6 +104,8 @@ export abstract class IMutation {
     abstract createUser(createUserInput: CreateUserInput): Nullable<User> | Promise<Nullable<User>>;
 
     abstract updateUser(updateUserInput: UpdateUserInput): Nullable<User> | Promise<Nullable<User>>;
+
+    abstract createWorkout(input?: Nullable<CreateWorkoutInput>): Nullable<Workout> | Promise<Nullable<Workout>>;
 }
 
 export class User {
@@ -129,6 +141,15 @@ export abstract class IQuery {
 
 export abstract class ISubscription {
     abstract room(roomId?: Nullable<string>): Nullable<Room> | Promise<Nullable<Room>>;
+}
+
+export class Workout {
+    id?: Nullable<number>;
+    name?: Nullable<string>;
+    description?: Nullable<string>;
+    difficulty?: Nullable<number>;
+    duration?: Nullable<number>;
+    exerciseIds?: Nullable<number>;
 }
 
 export type DateTime = any;

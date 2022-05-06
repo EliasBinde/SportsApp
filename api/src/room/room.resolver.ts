@@ -204,5 +204,30 @@ export class RoomResolver {
     @Args('progress')
     progress: number,
     @Context() ctx,
-  ) {}
+  ) {
+    const room: Room = await this.roomService.findOne(roomId);
+    console.log(room);
+    if (!room.activeUsers.includes(ctx.req.user.userId)) {
+      return {
+        error: 'You are not in this room',
+      };
+    }
+    if (
+      !room.mods.includes(ctx.req.user.userId) &&
+      !room.owner === ctx.req.user.userId
+    ) {
+      return {
+        error: 'You are not allowed to set exercise progress',
+      };
+    }
+    console.log('first');
+    const updated = await this.roomService.setExerciseProgress(room, progress);
+    console.log('first');
+    console.log(updated);
+    pubSub.publish(roomId, {
+      room: updated,
+    });
+
+    return updated;
+  }
 }

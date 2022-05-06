@@ -9,6 +9,9 @@ export class WorkoutSumAggregate {
     id?: number;
 
     @Field(() => Int, {nullable:true})
+    ownerId?: number;
+
+    @Field(() => Int, {nullable:true})
     difficulty?: number;
 
     @Field(() => Int, {nullable:true})

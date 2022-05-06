@@ -2,7 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
-import { CustomWorkoutUpdateManyWithoutOwnerInput } from '../custom-workout/custom-workout-update-many-without-owner.input';
+import { WorkoutUpdateManyWithoutOwnerInput } from '../workout/workout-update-many-without-owner.input';
 
 @InputType()
 export class UserUpdateInput {
@@ -28,6 +28,6 @@ export class UserUpdateInput {
     @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
     createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => CustomWorkoutUpdateManyWithoutOwnerInput, {nullable:true})
-    customWorkouts?: CustomWorkoutUpdateManyWithoutOwnerInput;
+    @Field(() => WorkoutUpdateManyWithoutOwnerInput, {nullable:true})
+    workouts?: WorkoutUpdateManyWithoutOwnerInput;
 }

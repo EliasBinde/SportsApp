@@ -12,4 +12,10 @@ export class RoomAvgAggregateInput {
 
     @Field(() => Boolean, {nullable:true})
     activeUsers?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    activeExercise?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    activeExerciseProgress?: true;
 }

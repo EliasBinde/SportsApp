@@ -29,4 +29,7 @@ export class ExerciseCreateManyInput {
 
     @Field(() => Boolean, {nullable:true})
     useTimeTotal?: boolean;
+
+    @Field(() => Int, {nullable:false})
+    owner!: number;
 }

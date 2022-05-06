@@ -13,4 +13,10 @@ export class RoomAvgAggregate {
 
     @Field(() => Float, {nullable:true})
     activeUsers?: number;
+
+    @Field(() => Float, {nullable:true})
+    activeExercise?: number;
+
+    @Field(() => Float, {nullable:true})
+    activeExerciseProgress?: number;
 }

@@ -14,13 +14,25 @@ export class WorkoutCountAggregateInput {
     description?: true;
 
     @Field(() => Boolean, {nullable:true})
+    ownerId?: true;
+
+    @Field(() => Boolean, {nullable:true})
     difficulty?: true;
 
     @Field(() => Boolean, {nullable:true})
     duration?: true;
 
     @Field(() => Boolean, {nullable:true})
+    tags?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    targetMuscels?: true;
+
+    @Field(() => Boolean, {nullable:true})
     exerciseIds?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    public?: true;
 
     @Field(() => Boolean, {nullable:true})
     _all?: true;

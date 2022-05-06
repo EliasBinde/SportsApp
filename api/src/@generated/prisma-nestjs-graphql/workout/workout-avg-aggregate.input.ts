@@ -8,6 +8,9 @@ export class WorkoutAvgAggregateInput {
     id?: true;
 
     @Field(() => Boolean, {nullable:true})
+    ownerId?: true;
+
+    @Field(() => Boolean, {nullable:true})
     difficulty?: true;
 
     @Field(() => Boolean, {nullable:true})

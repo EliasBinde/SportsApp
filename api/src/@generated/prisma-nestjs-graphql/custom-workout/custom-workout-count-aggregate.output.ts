@@ -24,6 +24,12 @@ export class CustomWorkoutCountAggregate {
     duration!: number;
 
     @Field(() => Int, {nullable:false})
+    tags!: number;
+
+    @Field(() => Int, {nullable:false})
+    targetMuscels!: number;
+
+    @Field(() => Int, {nullable:false})
     exerciseIds!: number;
 
     @Field(() => Int, {nullable:false})

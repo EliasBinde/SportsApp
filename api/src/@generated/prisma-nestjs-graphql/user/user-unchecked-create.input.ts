@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { Int } from '@nestjs/graphql';
-import { CustomWorkoutUncheckedCreateNestedManyWithoutOwnerInput } from '../custom-workout/custom-workout-unchecked-create-nested-many-without-owner.input';
+import { WorkoutUncheckedCreateNestedManyWithoutOwnerInput } from '../workout/workout-unchecked-create-nested-many-without-owner.input';
 
 @InputType()
 export class UserUncheckedCreateInput {
@@ -30,6 +30,6 @@ export class UserUncheckedCreateInput {
     @Field(() => Date, {nullable:false})
     createdAt!: Date | string;
 
-    @Field(() => CustomWorkoutUncheckedCreateNestedManyWithoutOwnerInput, {nullable:true})
-    customWorkouts?: CustomWorkoutUncheckedCreateNestedManyWithoutOwnerInput;
+    @Field(() => WorkoutUncheckedCreateNestedManyWithoutOwnerInput, {nullable:true})
+    workouts?: WorkoutUncheckedCreateNestedManyWithoutOwnerInput;
 }

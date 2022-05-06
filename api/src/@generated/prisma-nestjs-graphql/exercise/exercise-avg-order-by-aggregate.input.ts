@@ -13,4 +13,7 @@ export class ExerciseAvgOrderByAggregateInput {
 
     @Field(() => SortOrder, {nullable:true})
     timeTotal?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    owner?: keyof typeof SortOrder;
 }

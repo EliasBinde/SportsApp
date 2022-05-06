@@ -9,6 +9,9 @@ export class WorkoutAvgAggregate {
     id?: number;
 
     @Field(() => Float, {nullable:true})
+    ownerId?: number;
+
+    @Field(() => Float, {nullable:true})
     difficulty?: number;
 
     @Field(() => Float, {nullable:true})

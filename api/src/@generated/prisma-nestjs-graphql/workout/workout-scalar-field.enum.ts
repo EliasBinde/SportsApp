@@ -4,9 +4,13 @@ export enum WorkoutScalarFieldEnum {
     id = "id",
     name = "name",
     description = "description",
+    ownerId = "ownerId",
     difficulty = "difficulty",
     duration = "duration",
-    exerciseIds = "exerciseIds"
+    tags = "tags",
+    targetMuscels = "targetMuscels",
+    exerciseIds = "exerciseIds",
+    'public' = "public"
 }
 
 

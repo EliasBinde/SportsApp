@@ -41,4 +41,7 @@ export class ExerciseWhereInput {
 
     @Field(() => BoolFilter, {nullable:true})
     useTimeTotal?: BoolFilter;
+
+    @Field(() => IntFilter, {nullable:true})
+    owner?: IntFilter;
 }

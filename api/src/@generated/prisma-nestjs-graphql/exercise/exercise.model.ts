@@ -29,4 +29,7 @@ export class Exercise {
 
     @Field(() => Boolean, {nullable:false,defaultValue:false})
     useTimeTotal!: boolean;
+
+    @Field(() => Int, {nullable:false})
+    owner!: number;
 }

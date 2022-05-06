@@ -26,7 +26,7 @@ model User {
   firstName         String
   lastName          String
   createdAt         DateTime
-  customWorkouts    CustomWorkout[]
+  workouts   Workout[]
 }
 
 
@@ -41,8 +41,8 @@ model Room {
   mods String[]
   activeWorkout Int?
   activeUsers Int[]
-  activeExercise Int
-  activeExerciseProgress Int
+  activeExercise Int?
+  activeExerciseProgress Int?
 }
 
 
@@ -50,21 +50,16 @@ model Workout {
   id          Int     @id @default(autoincrement())
   name        String
   description String?
-  difficulty  Int
-  duration    Int
-  exerciseIds Int[]
-}
-model CustomWorkout {
-  id          Int     @id @default(autoincrement())
-  name        String
-  description String?
   owner       User    @relation(fields: [ownerId], references: [id])
   ownerId     Int
   difficulty  Int
   duration    Int
+  tags String[]
+  targetMuscels String[]
   exerciseIds Int[]
   public        Boolean @default(false)
 }
+
 
 model Exercise {
   id            Int     @id @default(autoincrement())

@@ -20,13 +20,25 @@ export class WorkoutGroupBy {
     description?: string;
 
     @Field(() => Int, {nullable:false})
+    ownerId!: number;
+
+    @Field(() => Int, {nullable:false})
     difficulty!: number;
 
     @Field(() => Int, {nullable:false})
     duration!: number;
 
+    @Field(() => [String], {nullable:true})
+    tags?: Array<string>;
+
+    @Field(() => [String], {nullable:true})
+    targetMuscels?: Array<string>;
+
     @Field(() => [Int], {nullable:true})
     exerciseIds?: Array<number>;
+
+    @Field(() => Boolean, {nullable:false})
+    public!: boolean;
 
     @Field(() => WorkoutCountAggregate, {nullable:true})
     _count?: WorkoutCountAggregate;

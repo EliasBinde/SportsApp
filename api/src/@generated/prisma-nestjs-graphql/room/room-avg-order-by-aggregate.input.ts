@@ -13,4 +13,10 @@ export class RoomAvgOrderByAggregateInput {
 
     @Field(() => SortOrder, {nullable:true})
     activeUsers?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    activeExercise?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    activeExerciseProgress?: keyof typeof SortOrder;
 }

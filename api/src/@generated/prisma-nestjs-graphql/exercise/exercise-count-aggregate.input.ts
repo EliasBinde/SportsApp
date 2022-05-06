@@ -29,5 +29,8 @@ export class ExerciseCountAggregateInput {
     useTimeTotal?: true;
 
     @Field(() => Boolean, {nullable:true})
+    owner?: true;
+
+    @Field(() => Boolean, {nullable:true})
     _all?: true;
 }

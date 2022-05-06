@@ -35,5 +35,11 @@ export class RoomCountAggregateInput {
     activeUsers?: true;
 
     @Field(() => Boolean, {nullable:true})
+    activeExercise?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    activeExerciseProgress?: true;
+
+    @Field(() => Boolean, {nullable:true})
     _all?: true;
 }

@@ -22,20 +22,12 @@ CREATE TABLE "Room" (
     "private" BOOLEAN NOT NULL DEFAULT true,
     "invited" TEXT[],
     "mods" TEXT[],
+    "activeWorkout" INTEGER,
+    "activeUsers" INTEGER[],
+    "activeExercise" INTEGER NOT NULL,
+    "activeExerciseProgress" INTEGER NOT NULL,
 
     CONSTRAINT "Room_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "ActiveWorkout" (
-    "id" SERIAL NOT NULL,
-    "roomId" INTEGER NOT NULL,
-    "workoutId" INTEGER NOT NULL,
-    "customWorkout" BOOLEAN NOT NULL,
-    "activeExcrcise" INTEGER NOT NULL,
-    "customExcircise" BOOLEAN NOT NULL,
-
-    CONSTRAINT "ActiveWorkout_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -74,24 +66,9 @@ CREATE TABLE "Exercise" (
     "timePerRep" INTEGER,
     "timeTotal" INTEGER,
     "useTimeTotal" BOOLEAN NOT NULL DEFAULT false,
+    "owner" INTEGER NOT NULL,
 
     CONSTRAINT "Exercise_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "CustomExercise" (
-    "id" SERIAL NOT NULL,
-    "name" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
-    "ownerId" INTEGER NOT NULL,
-    "targetMuscels" TEXT[],
-    "videoLink" TEXT NOT NULL,
-    "timePerRep" INTEGER,
-    "timeTotal" INTEGER,
-    "useTimeTotal" BOOLEAN NOT NULL DEFAULT false,
-    "public" BOOLEAN NOT NULL DEFAULT false,
-
-    CONSTRAINT "CustomExercise_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -100,14 +77,5 @@ CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
--- CreateIndex
-CREATE UNIQUE INDEX "ActiveWorkout_roomId_key" ON "ActiveWorkout"("roomId");
-
--- AddForeignKey
-ALTER TABLE "ActiveWorkout" ADD CONSTRAINT "ActiveWorkout_roomId_fkey" FOREIGN KEY ("roomId") REFERENCES "Room"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
 -- AddForeignKey
 ALTER TABLE "CustomWorkout" ADD CONSTRAINT "CustomWorkout_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "CustomExercise" ADD CONSTRAINT "CustomExercise_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

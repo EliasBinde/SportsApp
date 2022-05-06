@@ -25,4 +25,7 @@ export class ExerciseMinOrderByAggregateInput {
 
     @Field(() => SortOrder, {nullable:true})
     useTimeTotal?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    owner?: keyof typeof SortOrder;
 }

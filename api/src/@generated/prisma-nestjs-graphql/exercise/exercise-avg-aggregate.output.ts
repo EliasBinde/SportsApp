@@ -13,4 +13,7 @@ export class ExerciseAvgAggregate {
 
     @Field(() => Float, {nullable:true})
     timeTotal?: number;
+
+    @Field(() => Float, {nullable:true})
+    owner?: number;
 }

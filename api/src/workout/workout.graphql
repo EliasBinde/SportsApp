@@ -1,0 +1,22 @@
+type Workout {
+  id: Int
+  name: String
+  description: String
+  difficulty: Int
+  duration: Int
+  exerciseIds: Int
+}
+
+input CreateWorkoutInput {
+  name: String
+  description: String
+  difficulty: Int
+  duration: Int
+  tags: [String]
+  targetMuscles: [String]
+  exerciseIds: [Int]
+}
+
+type Mutation {
+  createWorkout(input: CreateWorkoutInput): Workout
+}

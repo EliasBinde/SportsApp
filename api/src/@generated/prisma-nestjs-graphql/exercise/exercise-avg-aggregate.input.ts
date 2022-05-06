@@ -12,4 +12,7 @@ export class ExerciseAvgAggregateInput {
 
     @Field(() => Boolean, {nullable:true})
     timeTotal?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    owner?: true;
 }

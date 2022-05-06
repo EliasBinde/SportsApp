@@ -3,7 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { IntFieldUpdateOperationsInput } from '../prisma/int-field-update-operations.input';
 import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-operations.input';
 import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-update-operations.input';
-import { CustomWorkoutUncheckedUpdateManyWithoutOwnerInput } from '../custom-workout/custom-workout-unchecked-update-many-without-owner.input';
+import { WorkoutUncheckedUpdateManyWithoutOwnerInput } from '../workout/workout-unchecked-update-many-without-owner.input';
 
 @InputType()
 export class UserUncheckedUpdateInput {
@@ -32,6 +32,6 @@ export class UserUncheckedUpdateInput {
     @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
     createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => CustomWorkoutUncheckedUpdateManyWithoutOwnerInput, {nullable:true})
-    customWorkouts?: CustomWorkoutUncheckedUpdateManyWithoutOwnerInput;
+    @Field(() => WorkoutUncheckedUpdateManyWithoutOwnerInput, {nullable:true})
+    workouts?: WorkoutUncheckedUpdateManyWithoutOwnerInput;
 }

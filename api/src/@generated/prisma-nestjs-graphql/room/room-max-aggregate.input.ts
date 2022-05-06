@@ -21,4 +21,10 @@ export class RoomMaxAggregateInput {
 
     @Field(() => Boolean, {nullable:true})
     activeWorkout?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    activeExercise?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    activeExerciseProgress?: true;
 }

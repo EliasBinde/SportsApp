@@ -24,4 +24,7 @@ export class ExerciseMinAggregateInput {
 
     @Field(() => Boolean, {nullable:true})
     useTimeTotal?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    owner?: true;
 }

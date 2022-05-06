@@ -13,4 +13,10 @@ export class RoomSumAggregate {
 
     @Field(() => [Int], {nullable:true})
     activeUsers?: Array<number>;
+
+    @Field(() => Int, {nullable:true})
+    activeExercise?: number;
+
+    @Field(() => Int, {nullable:true})
+    activeExerciseProgress?: number;
 }

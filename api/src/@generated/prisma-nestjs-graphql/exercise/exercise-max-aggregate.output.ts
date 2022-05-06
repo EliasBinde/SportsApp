@@ -25,4 +25,7 @@ export class ExerciseMaxAggregate {
 
     @Field(() => Boolean, {nullable:true})
     useTimeTotal?: boolean;
+
+    @Field(() => Int, {nullable:true})
+    owner?: number;
 }

@@ -40,6 +40,12 @@ export class RoomGroupBy {
     @Field(() => [Int], {nullable:true})
     activeUsers?: Array<number>;
 
+    @Field(() => Int, {nullable:true})
+    activeExercise?: number;
+
+    @Field(() => Int, {nullable:true})
+    activeExerciseProgress?: number;
+
     @Field(() => RoomCountAggregate, {nullable:true})
     _count?: RoomCountAggregate;
 

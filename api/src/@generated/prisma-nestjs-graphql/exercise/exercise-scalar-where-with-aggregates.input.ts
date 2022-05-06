@@ -41,4 +41,7 @@ export class ExerciseScalarWhereWithAggregatesInput {
 
     @Field(() => BoolWithAggregatesFilter, {nullable:true})
     useTimeTotal?: BoolWithAggregatesFilter;
+
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    owner?: IntWithAggregatesFilter;
 }

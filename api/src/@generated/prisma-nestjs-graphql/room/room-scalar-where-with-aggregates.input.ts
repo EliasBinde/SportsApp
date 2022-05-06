@@ -49,4 +49,10 @@ export class RoomScalarWhereWithAggregatesInput {
 
     @Field(() => IntNullableListFilter, {nullable:true})
     activeUsers?: IntNullableListFilter;
+
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    activeExercise?: IntNullableWithAggregatesFilter;
+
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    activeExerciseProgress?: IntNullableWithAggregatesFilter;
 }

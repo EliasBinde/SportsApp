@@ -7,6 +7,8 @@ export enum CustomWorkoutScalarFieldEnum {
     ownerId = "ownerId",
     difficulty = "difficulty",
     duration = "duration",
+    tags = "tags",
+    targetMuscels = "targetMuscels",
     exerciseIds = "exerciseIds",
     'public' = "public"
 }

@@ -8,7 +8,8 @@ export enum ExerciseScalarFieldEnum {
     videoLink = "videoLink",
     timePerRep = "timePerRep",
     timeTotal = "timeTotal",
-    useTimeTotal = "useTimeTotal"
+    useTimeTotal = "useTimeTotal",
+    owner = "owner"
 }
 
 

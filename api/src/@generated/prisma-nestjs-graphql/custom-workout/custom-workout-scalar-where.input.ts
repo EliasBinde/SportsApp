@@ -3,6 +3,7 @@ import { InputType } from '@nestjs/graphql';
 import { IntFilter } from '../prisma/int-filter.input';
 import { StringFilter } from '../prisma/string-filter.input';
 import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
+import { StringNullableListFilter } from '../prisma/string-nullable-list-filter.input';
 import { IntNullableListFilter } from '../prisma/int-nullable-list-filter.input';
 import { BoolFilter } from '../prisma/bool-filter.input';
 
@@ -35,6 +36,12 @@ export class CustomWorkoutScalarWhereInput {
 
     @Field(() => IntFilter, {nullable:true})
     duration?: IntFilter;
+
+    @Field(() => StringNullableListFilter, {nullable:true})
+    tags?: StringNullableListFilter;
+
+    @Field(() => StringNullableListFilter, {nullable:true})
+    targetMuscels?: StringNullableListFilter;
 
     @Field(() => IntNullableListFilter, {nullable:true})
     exerciseIds?: IntNullableListFilter;

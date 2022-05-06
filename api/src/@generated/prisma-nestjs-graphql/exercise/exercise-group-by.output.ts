@@ -34,6 +34,9 @@ export class ExerciseGroupBy {
     @Field(() => Boolean, {nullable:false})
     useTimeTotal!: boolean;
 
+    @Field(() => Int, {nullable:false})
+    owner!: number;
+
     @Field(() => ExerciseCountAggregate, {nullable:true})
     _count?: ExerciseCountAggregate;
 

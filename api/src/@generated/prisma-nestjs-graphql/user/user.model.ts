@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
-import { CustomWorkout } from '../custom-workout/custom-workout.model';
+import { Workout } from '../workout/workout.model';
 import { UserCount } from './user-count.output';
 
 @ObjectType()
@@ -31,8 +31,8 @@ export class User {
     @Field(() => Date, {nullable:false})
     createdAt!: Date;
 
-    @Field(() => [CustomWorkout], {nullable:true})
-    customWorkouts?: Array<CustomWorkout>;
+    @Field(() => [Workout], {nullable:true})
+    workouts?: Array<Workout>;
 
     @Field(() => UserCount, {nullable:false})
     _count?: UserCount;

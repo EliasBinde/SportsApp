@@ -1,7 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { SortOrder } from '../prisma/sort-order.enum';
-import { CustomWorkoutOrderByRelationAggregateInput } from '../custom-workout/custom-workout-order-by-relation-aggregate.input';
+import { WorkoutOrderByRelationAggregateInput } from '../workout/workout-order-by-relation-aggregate.input';
 
 @InputType()
 export class UserOrderByWithRelationInput {
@@ -30,6 +30,6 @@ export class UserOrderByWithRelationInput {
     @Field(() => SortOrder, {nullable:true})
     createdAt?: keyof typeof SortOrder;
 
-    @Field(() => CustomWorkoutOrderByRelationAggregateInput, {nullable:true})
-    customWorkouts?: CustomWorkoutOrderByRelationAggregateInput;
+    @Field(() => WorkoutOrderByRelationAggregateInput, {nullable:true})
+    workouts?: WorkoutOrderByRelationAggregateInput;
 }

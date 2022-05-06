@@ -24,6 +24,12 @@ export class CustomWorkoutCountOrderByAggregateInput {
     duration?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    tags?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    targetMuscels?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     exerciseIds?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})

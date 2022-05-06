@@ -36,5 +36,11 @@ export class RoomCountAggregate {
     activeUsers!: number;
 
     @Field(() => Int, {nullable:false})
+    activeExercise!: number;
+
+    @Field(() => Int, {nullable:false})
+    activeExerciseProgress!: number;
+
+    @Field(() => Int, {nullable:false})
     _all!: number;
 }

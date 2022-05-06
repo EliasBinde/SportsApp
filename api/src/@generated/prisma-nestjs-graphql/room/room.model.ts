@@ -35,4 +35,10 @@ export class Room {
 
     @Field(() => [Int], {nullable:true})
     activeUsers!: Array<number>;
+
+    @Field(() => Int, {nullable:true})
+    activeExercise!: number | null;
+
+    @Field(() => Int, {nullable:true})
+    activeExerciseProgress!: number | null;
 }

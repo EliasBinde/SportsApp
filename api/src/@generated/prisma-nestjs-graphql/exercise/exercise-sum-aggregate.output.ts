@@ -13,4 +13,7 @@ export class ExerciseSumAggregate {
 
     @Field(() => Int, {nullable:true})
     timeTotal?: number;
+
+    @Field(() => Int, {nullable:true})
+    owner?: number;
 }

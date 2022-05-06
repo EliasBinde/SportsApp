@@ -9,6 +9,9 @@ export class WorkoutSumOrderByAggregateInput {
     id?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    ownerId?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     difficulty?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})

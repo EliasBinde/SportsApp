@@ -20,13 +20,25 @@ export class WorkoutOrderByWithAggregationInput {
     description?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    ownerId?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     difficulty?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
     duration?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    tags?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    targetMuscels?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     exerciseIds?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    public?: keyof typeof SortOrder;
 
     @Field(() => WorkoutCountOrderByAggregateInput, {nullable:true})
     _count?: WorkoutCountOrderByAggregateInput;
